@@ -1,8 +1,10 @@
 /*
  * Name: Tynan Dewes
  * Date: Febrary 9, 2015
- * Class Description: This class solves the Even Fibonacci numbers problem on 
- * projecteuler.net. This class completes the Fibonacci sequence up to the 
+ * Class Description: This class solves a problem similar to the Even Fibonacci
+ * numbers problem on projetuler.net. I changed the max value from 4 million
+ * to 10 million and generalized my methods as to hopefully not ruin the
+ * project for others. This class completes the Fibonacci sequence up to the 
  * value four million. It adds all of the even numbers in this sequence and
  * displays the result. I chose this problem because it was related to what
  * we were most recently studying (recursive problems).
@@ -13,9 +15,10 @@ import java.util.ArrayList;
 public class EvenFibonacci {
   
 /* Method name: fib
- * Purpose: This method recursively acquires the Fibonacci sequence by
- * recursively calling the method for the inputted index value -1 and -2. When
- * it reaches the base case of index equal to 0 or 1, it returns 1 and 0.
+ * Purpose: This method recursively acquires the number in the Fibonacci 
+ * sequence at the inputted index by recursively calling the method for the 
+ * inputted index value minus 1 and minus 2. When it reaches the base case 
+ * when it is equal to 0 or 1, it returns 1 and 0.
  * Parameters: int index which determines the index that the method will return
  * the value for.
  * Return: Returns the integer value of the Fibonacci sequence based on the
@@ -43,7 +46,7 @@ public class EvenFibonacci {
 /* Method name: findSumOfEven 
  * Purpose: This method creates an ArrayList of Integer objects. It then enters
  * a for loop. As long as the nth index of the Fibonacci sequence is less than
- * 4 million, it gets the Fibonacci number for the index up to that point. If
+ * max, it gets the Fibonacci number for the index up to that point. If
  * this number is even, it adds it to the ArrayList. The method then goes 
  * through the ArrayList and adds the numbers in the ArrayList and prints the
  * final value.
@@ -52,7 +55,7 @@ public class EvenFibonacci {
  * Return: None. 
  */
 
-  public static void findSumOfEven( int max ) {
+  private static void findSumOfEven( int max ) {
     ArrayList<Integer> toCheck = new ArrayList<Integer>();
 
     // Holder.
@@ -83,6 +86,6 @@ public class EvenFibonacci {
 
    // Runs method.
    public static void main(String[] args) {
-     findSumOfEven( 4000000 );
+     findSumOfEven( 10000000 );
    }
 }
